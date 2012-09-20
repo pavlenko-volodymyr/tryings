@@ -15,13 +15,13 @@ def make_noty(title, body):
 	knotify = dbus.SessionBus().get_object("org.kde.knotify", "/Notify")
 	knotify.event("warning", "kde", [], title, body, [], [], 0, 0, dbus_interface="org.kde.KNotify")
 
-# client = odesk.Client(ODESK_PUBLIC_KEY, ODESK_SECRET_KEY)
-# frob = client.auth.get_frob()
-# if frob:
-# 	print frob
-# 	time.sleep(10)
-# 	auth_token, user = client.auth.get_token(frob)
-# client = odesk.Client(ODESK_PUBLIC_KEY, ODESK_SECRET_KEY, auth_token)
+client = odesk.Client(ODESK_PUBLIC_KEY, ODESK_SECRET_KEY)
+frob = client.auth.get_frob()
+if frob:
+	print frob
+	time.sleep(10)
+	auth_token, user = client.auth.get_token(frob)
+client = odesk.Client(ODESK_PUBLIC_KEY, ODESK_SECRET_KEY, auth_token)
 
 # print client.mc.get_tray_content(USERNAME, 'inbox', paging_offset=0, paging_count=20)
 
